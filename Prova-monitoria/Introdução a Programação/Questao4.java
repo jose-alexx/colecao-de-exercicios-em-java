@@ -6,7 +6,7 @@ public class Questao4 {
         
         int[] vetor1 = new int[5];
         int[] vetor2 = new int[5];
-        int[] vetorDiferenca = new int[5];
+        boolean diferenca;
 
         System.err.println("---------Primeiro Vetor---------\n");
 
@@ -22,23 +22,23 @@ public class Questao4 {
             vetor2[i] = entrada.nextInt();
         }
 
-        /*
+        System.err.println("\nValores do Primeiro vetor que não estão no segundo vetor\n");
 
-        Não entendi essa parte se era para mostrar realmente a diferença ou os valores de x que não aparecem em y
-         for (int i=0; i<vetorDiferenca.length; i++) {
-            for (int j=0; j<vetorDiferenca.length; j++) {
-                if (vetor1[i] != vetor2[j]) {
-                    vetorDiferenca = 
+        for (int i=0; i<vetor1.length; i++) {
+            diferenca = false;
+
+            for (int j=0; j<vetor2.length; j++) {
+
+                if (vetor1[i] == vetor2[j]) {
+                    diferenca = true;
+                    break;
                 }
             }
 
-        }
-         */
+            if (!diferenca) {
+                System.out.println(vetor1[i]);
+            }
 
-         for (int i=0; i<vetorDiferenca.length; i++) {
-            vetorDiferenca[i] = vetor1[i] - vetor2[i];
-            System.out.println("A diferença da posicão [" + (i+1) + "] é: " + vetorDiferenca[i]);
-         }
+        }    
     }
-    
 }
